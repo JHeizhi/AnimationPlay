@@ -2,6 +2,7 @@ package com.kinoct.Player;
 
 import com.kinoct.Utils.AudioPlay;
 import com.kinoct.Utils.GetVideoInfo;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,6 +13,14 @@ import java.awt.Font;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+/**
+ * @param null
+ * @author Silolo
+ * @description: 已废弃
+ * @date 2022/11/7 23:30
+ * @return null
+ */
 
 public class Animation {
     /*
@@ -91,7 +100,6 @@ public class Animation {
         } else {
             System.out.println("音频文件已存在！\n");
         }
-
     }
 
     /*

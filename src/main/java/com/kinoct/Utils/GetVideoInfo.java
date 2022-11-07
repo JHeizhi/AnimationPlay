@@ -41,16 +41,13 @@ public class GetVideoInfo {
             InputStreamReader iReader = new InputStreamReader(inputStream, "GBK");
             char[] chars = new char[1024];
             int len;
-
             while ((len = iReader.read(chars)) != -1) {
                 String string = new String(chars, 0, len);
                 this.time = (int) Double.parseDouble(string.trim());
                 System.out.println("视频时长：" + time);
             }
-
             iReader.close();
             inputStream.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +55,6 @@ public class GetVideoInfo {
     }
 
     public void getVideoFps(String videoPath) {
-
         ProcessBuilder builder = new ProcessBuilder();
         ArrayList<String> command = new ArrayList<>();
         command.add("ffprobe");
