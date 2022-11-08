@@ -28,7 +28,7 @@ public class ImageTools {
                 Graphics2D graphics = newImage.createGraphics();
                 graphics.setColor(null);
                 graphics.fillRect(0, 0, w, h);
-                int size = 10;
+                int size = 12;
                 Font font = new Font("宋体", Font.BOLD, size);
                 graphics.setFont(font);
                 for (int x = 0; x < w; x += size) {

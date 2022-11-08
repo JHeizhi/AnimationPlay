@@ -34,11 +34,12 @@ public class newPlayer {
         scanner.close();
         File video = new File(filePath);
 
-        // 图片保存路径
-        String picPath = filePath.replace(".mp4", "_pics\\");
-        String fileOutPath = filePath.replace(".mp4", "_out.mp4");
+        // 文件保存路径
+        String picPath = filePath + "_pics\\";
+        String fileOutPath = filePath + "_out.mp4";
+        String outVideoPath = filePath + "_zifu.mp4";
         String audioPath = filePath + ".mp3";
-        String outPicsPath = filePath.replace(".mp4", "_outPics\\");
+        String outPicsPath = filePath + "_outPics\\";
 
         if (!video.isDirectory()) {
             if (!video.exists()) {
@@ -61,11 +62,14 @@ public class newPlayer {
                 }
                 videoTools.compositeVideo(filePath, outPicsPath, fps);
                 videoTools.mergeAudioAndVideo(fileOutPath, audioPath);
+
                 System.out.println("开始删除缓存文件...");
                 deleteTempFiles.deleteFiles(new File(outPicsPath));
                 new File(audioPath).delete();
                 new File(fileOutPath).delete();
                 deleteTempFiles.deleteFiles(new File(picPath));
+                System.out.println("过程文件已删除，开始播放视频...");
+                videoTools.autoPlay(outVideoPath);
             }
         } else {
             System.out.println("这是文件夹吗？记得加.mp4!");
